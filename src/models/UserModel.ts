@@ -8,7 +8,7 @@ interface UserModel extends
     readonly id?: number
     user: string
     password: string
-    readonly createdAt: Date
+    readonly createdAt?: Date
     updatedAt?: Date
 }
 
