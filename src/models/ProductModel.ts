@@ -5,7 +5,7 @@ interface ProductModel extends
     Model<InferAttributes<ProductModel>,
     InferCreationAttributes<ProductModel>> {
 
-    readonly id: number
+    readonly id?: number
     name: string
     imgSRC: string
     stockQuantity: number
