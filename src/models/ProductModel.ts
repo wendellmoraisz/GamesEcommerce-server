@@ -10,7 +10,7 @@ interface ProductModel extends
     imgSRC: string
     stockQuantity: number
     price: number
-    readonly createdAt: Date
+    readonly createdAt?: Date
     updatedAt?: Date
 }
 

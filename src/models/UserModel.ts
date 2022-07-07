@@ -8,6 +8,8 @@ interface UserModel extends
     readonly id?: number
     user: string
     password: string
+    readonly createdAt: Date
+    updatedAt?: Date
 }
 
 const UserModel = sequelize.define<UserModel>("users", {
@@ -24,6 +26,14 @@ const UserModel = sequelize.define<UserModel>("users", {
     password: {
         type: DataTypes.STRING,
         allowNull: false,
+    },
+    createdAt: {
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
+    },
+    updatedAt: {
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
     }
 });
 
