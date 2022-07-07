@@ -5,7 +5,7 @@ interface UserModel extends
     Model<InferAttributes<UserModel>,
     InferCreationAttributes<UserModel>> {
 
-    readonly id: number
+    readonly id?: number
     user: string
     password: string
 }
@@ -14,7 +14,6 @@ const UserModel = sequelize.define<UserModel>("users", {
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
-        allowNull: false,
         primaryKey: true,
     },
     user: {
