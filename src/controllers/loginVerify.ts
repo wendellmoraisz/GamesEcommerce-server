@@ -12,7 +12,7 @@ const loginVerify = async (req: Request, res: Response) => {
         attributes: ["user", "password", "id"],
     });
     if (results) {
-        const token = createAccessToken(user, results.id);
+        const token = createAccessToken(user, results.id as number);
         res.status(200).json({
             message: "login successfully",
             authToken: token,
