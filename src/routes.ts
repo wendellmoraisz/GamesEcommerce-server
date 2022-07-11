@@ -15,7 +15,7 @@ routes.post("/products", verifyToken, createProduct);
 routes.get("/products", verifyToken, getProducts);
 routes.post("/login", loginVerify);
 routes.delete("/products", verifyToken, deleteProduct);
-routes.put("/products", verifyToken, updateProduct);
+routes.put("/products/:id", verifyToken, updateProduct);
 routes.get("/products/nameStartsWith/:name", verifyToken, getProductByName);
 
 export default routes;
