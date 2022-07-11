@@ -1,31 +1,19 @@
 import { Request, Response } from "express";
 import UserModel from "../models/UserModel";
 
-interface BodyRequest {
-    user: string
-    password: string
-}
-
 const createUser = async (req: Request, res: Response) => {
-    const { user, password }: BodyRequest = req.body;
+    const { user, password } = req.body;
+
+    if (!user || !password) return res.status(400).json({ error: "insufficient data" });
+    
     try {
         await UserModel.create({
             user: user,
             password: password,
         });
-        res.json({
-            response: {
-                code: 200,
-                message: "user created successfully",
-            }
-        });
+        res.status(200).json({ message: "account created successfully" });
     } catch (e) {
-        res.json({
-            error: {
-                code: 401,
-                message: "error creating user",
-            }
-        });
+        res.status(400).json({ error: "user already exists" });
     }
 }
 

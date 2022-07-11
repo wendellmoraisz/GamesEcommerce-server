@@ -1,35 +1,21 @@
 import { Request, Response } from "express";
 import ProductModel from "../models/ProductModel";
 
-interface BodyRequest {
-    name: string
-    imgSRC: string
-    stockQuantity: number
-    price: number
-}
-
 const createProduct = async (req: Request, res: Response) => {
-    const { name, imgSRC, stockQuantity, price }: BodyRequest = req.body;
+    const { name, imgSRC, stockQuantity, price } = req.body;
+
+    if (!name || !imgSRC || !stockQuantity || !price) return res.status(400).json({ error: "insufficient data" });
+
     try {
-        ProductModel.create({
+        await ProductModel.create({
             name: name,
             imgSRC: imgSRC,
             stockQuantity: stockQuantity,
             price: price,
         });
-        res.json({
-            response: {
-                code: 200,
-                message: "product successfully created",
-            }
-        });
+        res.status(200).json({ message: "product registered successfully" });
     } catch (e) {
-        res.json({
-            error: {
-                code: 401,
-                message: "error creating product",
-            }
-        });
+        res.status(500).json({ error: "internal server error" });
     }
 }
 
