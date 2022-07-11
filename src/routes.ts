@@ -3,6 +3,7 @@ import createProduct from "./controllers/createProduct";
 import loginVerify from "./controllers/loginVerify";
 import getProducts from "./controllers/getProducts";
 import deleteProduct from "./controllers/deleteProduct";
+import updateProduct from "./controllers/updateProduct";
 import verifyToken from "./middlewares/verifyToken";
 import { Router } from "express";
 
@@ -13,5 +14,6 @@ routes.post("/product", verifyToken, createProduct);
 routes.get("/products", verifyToken, getProducts);
 routes.post("/login", loginVerify);
 routes.delete("/products", verifyToken, deleteProduct);
+routes.put("/products", verifyToken, updateProduct);
 
 export default routes;
