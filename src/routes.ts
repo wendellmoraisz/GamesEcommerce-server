@@ -11,7 +11,7 @@ import { Router } from "express";
 const routes = Router();
 
 routes.post("/user", createUser);
-routes.post("/product", verifyToken, createProduct);
+routes.post("/products", verifyToken, createProduct);
 routes.get("/products", verifyToken, getProducts);
 routes.post("/login", loginVerify);
 routes.delete("/products", verifyToken, deleteProduct);
