@@ -33,7 +33,7 @@ const ProductModel = sequelize.define<ProductModel>('product', {
         allowNull: false,
     },
     price: {
-        type: DataTypes.DECIMAL,
+        type: DataTypes.DOUBLE,
         allowNull: false,
     },
     createdAt: {
