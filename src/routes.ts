@@ -6,6 +6,7 @@ import deleteProduct from "./controllers/deleteProduct";
 import updateProduct from "./controllers/updateProduct";
 import getProductByName from "./controllers/getProductByName";
 import getProductByHighestPrice from "./controllers/getProductByHighestPrice";
+import getProductByLowestPrice from "./controllers/getProductByLowestPrice";
 import verifyToken from "./middlewares/verifyToken";
 import { Router } from "express";
 
@@ -19,5 +20,6 @@ routes.delete("/products", verifyToken, deleteProduct);
 routes.put("/products/:id", verifyToken, updateProduct);
 routes.get("/products/nameStartsWith/:name", verifyToken, getProductByName);
 routes.get("/products/HighestPrice", verifyToken, getProductByHighestPrice);
+routes.get("/products/LowestPrice", verifyToken, getProductByLowestPrice);
 
 export default routes;
