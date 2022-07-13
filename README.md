@@ -22,6 +22,7 @@ Além disso, permite o controle de estoque para o usuário autenticado.
   - [x] Editar produto
   - [x] Deletar produto
   - [x] Pesquisa de produto pelo começo do nome
+  - [x] Filtrar produtos por menor e maior preço
 
 # Requisitos mínimos
 - Ter o [Node.js](https://nodejs.org/en/download/) instalado na sua máquina.
