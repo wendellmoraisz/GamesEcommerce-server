@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import UserModel from "../models/UserModel";
-import createAccessToken from "../services/createToken";
+import UserModel from "../../models/UserModel";
+import createAccessToken from "../../services/createToken";
 
 const loginVerify = async (req: Request, res: Response) => {
     const { user, password } = req.body;

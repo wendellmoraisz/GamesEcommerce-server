@@ -1,5 +1,5 @@
 import { Request, Response } from "express"
-import ProductModel from "../models/ProductModel";
+import ProductModel from "../../../models/ProductModel";
 
 const deleteProduct = async (req: Request, res: Response) => {
     const { id } = req.body;

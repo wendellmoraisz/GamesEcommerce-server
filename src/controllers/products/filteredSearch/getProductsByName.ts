@@ -1,8 +1,8 @@
 import { Request, Response } from "express"
 import { Op } from "sequelize";
-import ProductModel from "../models/ProductModel";
+import ProductModel from "../../../models/ProductModel";
 
-const getProductByName = async (req: Request, res: Response) => {
+const getProductsByName = async (req: Request, res: Response) => {
     const { name } = req.params;
 
     try {
@@ -19,4 +19,4 @@ const getProductByName = async (req: Request, res: Response) => {
     }
 }
 
-export default getProductByName;
+export default getProductsByName;
