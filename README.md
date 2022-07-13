@@ -97,3 +97,14 @@ http://localhost:3333
  
     **response** = { message || error }
  
+- `GET` /products/HighestPrice - Busca produtos ordenandos pelo maior preço
+
+    **headers** = { authorization: token }
+    
+    **response** = { results: [ ]{ name, imgSRC, stockQuantity, price } }
+    
+- `GET` /products/LowestPrice - Busca produtos ordenandos pelo menor preço
+
+    **headers** = { authorization: token }
+    
+    **response** = { results: [ ]{ name, imgSRC, stockQuantity, price } }
