@@ -2,7 +2,9 @@
 
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/wendellmoraisz/GamesEcommerce-server/blob/main/LICENSE)
 
-Backend da loja de games
+Backend do projeto e-commerce de games. A API fornece dados dos produtos e permite a busca dos mesmos pelo nome.
+
+Além disso, permite o controle de estoque para o usuário autenticado.
 
 # Tecnologias utilizadas
 - [Node.js](https://nodejs.org/en/)
