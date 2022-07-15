@@ -4,6 +4,7 @@ import sequelize from "./config/database";
 import ProductModel from "./models/ProductModel";
 import UserModel from "./models/UserModel";
 import routes from "./routes";
+import cors from "cors";
 
 ProductModel;
 UserModel;
@@ -13,6 +14,7 @@ sequelize.sync()
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 app.use(routes);
 
 const PORT = process.env.PORT;
