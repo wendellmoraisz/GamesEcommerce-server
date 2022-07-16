@@ -13,7 +13,7 @@ const getProductsByName = async (req: Request, res: Response) => {
                 }
             }
         });
-        res.status(200).json({ result: queryResult });
+        res.status(200).json({ results: queryResult });
     } catch (e) {
         res.status(500).json({ error: "internal server error" });
     }
