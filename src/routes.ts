@@ -14,12 +14,12 @@ const routes = Router();
 
 routes.post("/user", createUser);
 routes.post("/products", verifyToken, createProduct);
-routes.get("/products", verifyToken, getProducts);
+routes.get("/products", getProducts);
 routes.post("/login", loginVerify);
 routes.delete("/products", verifyToken, deleteProduct);
 routes.put("/products/:id", verifyToken, updateProduct);
-routes.get("/products/nameStartsWith/:name", verifyToken, getProductsByName);
-routes.get("/products/HighestPrice", verifyToken, getProductsByHighestPrice);
-routes.get("/products/LowestPrice", verifyToken, getProductsByLowestPrice);
+routes.get("/products/nameStartsWith/:name", getProductsByName);
+routes.get("/products/HighestPrice", getProductsByHighestPrice);
+routes.get("/products/LowestPrice", getProductsByLowestPrice);
 
 export default routes;
