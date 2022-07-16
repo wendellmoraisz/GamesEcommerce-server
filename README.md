@@ -21,8 +21,8 @@ Além disso, permite o controle de estoque para o usuário autenticado.
   - [x] Cadastrar produto
   - [x] Editar produto
   - [x] Deletar produto
-  - [x] Pesquisa de produto pelo começo do nome
-  - [x] Filtrar produtos por menor e maior preço
+  - [x] Pesquisar produto pelo começo do nome
+  - [x] Pesquisa de produto ordenada por menor e maior preço
 
 # Requisitos mínimos
 - Ter o [Node.js](https://nodejs.org/en/download/) instalado na sua máquina.
@@ -58,8 +58,6 @@ http://localhost:3333
   
 ### Produtos
 - `GET` /products - Busca todos os produtos
-
-  **headers** = { authorization: token }
   
   **response** = { results: [ ]{ name, imgSRC, stockQuantity, price } }
 
@@ -67,9 +65,7 @@ http://localhost:3333
 
   **params** = { name: string }
   
-  **headers** = { authorization: token }
-  
-  **response** = { result: [ ]{ name, imgSRC, stockQuantity, price } }
+  **response** = { results: [ ]{ name, imgSRC, stockQuantity, price } }
   
 - `POST` /products - Cadastra novo produto 
   
@@ -98,13 +94,9 @@ http://localhost:3333
     **response** = { message || error }
  
 - `GET` /products/HighestPrice - Busca produtos ordenandos pelo maior preço
-
-    **headers** = { authorization: token }
     
     **response** = { results: [ ]{ name, imgSRC, stockQuantity, price } }
     
 - `GET` /products/LowestPrice - Busca produtos ordenandos pelo menor preço
-
-    **headers** = { authorization: token }
     
     **response** = { results: [ ]{ name, imgSRC, stockQuantity, price } }
