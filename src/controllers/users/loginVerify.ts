@@ -23,6 +23,7 @@ const loginVerify = async (req: Request, res: Response) => {
         res.status(401).json({ error: "invalid login" });
 
     } catch (e) {
+        console.error(e);
         res.status(500).json({ error: "internal server error" });
     }
 }

@@ -1,10 +1,11 @@
 import jwt from "jsonwebtoken";
 import "dotenv/config";
+import randomBytes from "../utils/randomBytes";
 
 const createAccessToken = (user: string, id: number) => {
     const token = jwt.sign(
         { user, id },
-        process.env.SECRET_TOKEN as string, // crypto.randomBytes(64).toString("hex")
+        randomBytes,
         { expiresIn: "24h" });
     return token;
 }
